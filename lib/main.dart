@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PoFocus());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PoFocus extends StatelessWidget {
+  const PoFocus({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
