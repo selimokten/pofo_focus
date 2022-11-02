@@ -12,7 +12,6 @@ class PoFocus extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: DefaultTheme.defaultThemeData(),
       home: HomeScreen(),
     );
   }
