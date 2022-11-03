@@ -5,6 +5,8 @@ class DefaultThemes {
     return ThemeData(
       primaryColor: const Color(0xFF674FFF),
       scaffoldBackgroundColor: const Color(0xFF1E1B2E),
+      fontFamily: 'Dosis',
+      
     );
   }
 }
