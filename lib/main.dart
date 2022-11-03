@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:po_focus/screens/home_screen.dart';
+import 'themes/default_theme.dart';
 
 void main() {
   runApp(const PoFocus());
@@ -10,9 +11,10 @@ class PoFocus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      theme: DefaultThemes.defaultThemeData(),
+      home: const HomeScreen(),
     );
   }
 }
