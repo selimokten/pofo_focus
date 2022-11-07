@@ -8,3 +8,9 @@ const TextStyle kAppBarTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.bold,
 );
+
+const TextStyle kMainTextStyle = TextStyle(
+  fontSize: 25.0,
+  color: Colors.white,
+  fontWeight: FontWeight.w100,
+);

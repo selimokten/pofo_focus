@@ -28,14 +28,25 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 100.0,),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100),
-                color: kSecondColor,
-              ),
-              child: const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Write Task', style: kAppBarTextStyle,),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: kSecondColor,
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: TextField(
+                    showCursor: false,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Task: Write an article',
+                      hintStyle: kMainTextStyle,
+                    ),
+                    style: kMainTextStyle,
+                  ),
+                ),
               ),
             ),
           ],
