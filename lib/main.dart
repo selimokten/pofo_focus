@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:po_focus/screens/home_screen.dart';
+import 'package:po_focus/views/home_view.dart';
 import 'themes/default_theme.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const PoFocus());
+  runApp(DevicePreview(builder: ((context) => const PoFocus()),),);
 }
 
 class PoFocus extends StatelessWidget {

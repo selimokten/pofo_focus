@@ -36,13 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: kSecondColor,
                 ),
                 child: const Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 35),
                   child: TextField(
                     showCursor: false,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Task: Write an article',
                       hintStyle: kMainTextStyle,
+                      suffixIcon: Icon(Icons.edit, color: Colors.white,),
                     ),
                     style: kMainTextStyle,
                   ),
