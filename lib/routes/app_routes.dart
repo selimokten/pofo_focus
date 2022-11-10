@@ -5,7 +5,7 @@ import '../views/profile_view.dart';
 
 class AppRoutes {
   static Map<String, Widget Function(BuildContext)> router = {
-    "/homeView": (context) => const HomeView(),
+    "/": (context) => const HomeView(),
     "/settingsView": (context) => const SettingsView(),
     "/profileView": (context) => const ProfileView(),
   };
