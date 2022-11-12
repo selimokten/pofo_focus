@@ -10,6 +10,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  bool isCountdownStart = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,14 +56,41 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   style: kMainTextStyle,
                   // Hold Value
-                  onChanged: (value) {
-                    
-                  },
+                  onChanged: (value) {},
                 ),
               ),
             ),
           ),
-          const Text('60', style: kTimerTextStyle,),     
+          const Text(
+            '60',
+            style: kTimerTextStyle,
+          ),
+          Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: kSecondColor,
+                  blurRadius: 17,
+                )
+              ]
+            ),
+            child: ElevatedButton(
+              style: kStartButtonStyle,
+              onPressed: (() {}),
+              child: isCountdownStart == true
+                  ? const Icon(
+                      Icons.pause,
+                      size: 40,
+                      color: kTextColor,
+                    )
+                  : const Icon(
+                      Icons.arrow_right,
+                      size: 40,
+                      color: kTextColor,
+                    ),
+            ),
+          ),
         ],
       ),
     );

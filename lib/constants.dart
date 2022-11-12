@@ -30,3 +30,9 @@ const TextStyle kTimerTextStyle = TextStyle(
   fontFamily: 'Oswald',
   fontWeight: FontWeight.w500,
 );
+
+ButtonStyle kStartButtonStyle = ButtonStyle(
+  shape: MaterialStateProperty.all(const CircleBorder()),
+  backgroundColor: MaterialStateProperty.all(kSecondColor),
+  padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
+);
