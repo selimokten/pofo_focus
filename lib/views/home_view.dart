@@ -14,9 +14,10 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
 
   int time = 60;
-  bool isCountDownStart = true;
+  bool isCountDownStart = false;
 
   void _startCountDown(){
+    isCountDownStart = true;
     Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if(time > 0){
@@ -101,7 +102,7 @@ class _HomeViewState extends State<HomeView> {
                       color: kTextColor,
                     )
                   : const Icon(
-                      Icons.arrow_right,
+                      Icons.play_arrow,
                       size: 40,
                       color: kTextColor,
                     ),
