@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:po_focus/constants.dart';
 import 'package:po_focus/themes/default_theme.dart';
@@ -10,7 +12,21 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  bool isCountdownStart = true;
+
+  int time = 60;
+  bool isCountDownStart = true;
+
+  void _startCountDown(){
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        if(time > 0){
+          time--;
+        } else {
+          timer.cancel();
+        }
+      });
+    });
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +77,8 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
           ),
-          const Text(
-            '60',
+          Text(
+            '$time',
             style: kTimerTextStyle,
           ),
           Container(
@@ -77,8 +93,8 @@ class _HomeViewState extends State<HomeView> {
             ),
             child: ElevatedButton(
               style: kStartButtonStyle,
-              onPressed: (() {}),
-              child: isCountdownStart == true
+              onPressed: _startCountDown,
+              child: isCountDownStart == true
                   ? const Icon(
                       Icons.pause,
                       size: 40,
