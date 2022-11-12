@@ -39,3 +39,8 @@ flutter:
         - asset: fonts/Dosis-Bold.ttf
         - asset: fonts/Dosis-Light.ttf
 
+    - family: Oswald
+      fonts:
+        - asset: fonts/Oswald-Bold.ttf
+        - asset: fonts/Oswald-Light.ttf
+

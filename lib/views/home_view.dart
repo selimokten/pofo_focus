@@ -61,6 +61,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
           ),
+          const Text('60', style: kTimerTextStyle,),     
         ],
       ),
     );

@@ -23,3 +23,9 @@ const TextStyle kHintTextStyle = TextStyle(
   fontFamily: 'Dosis',
   fontWeight: FontWeight.w100,
 );
+
+const TextStyle kTimerTextStyle = TextStyle(
+  fontSize: 100.0,
+  color: Colors.white,
+  fontWeight: FontWeight.w500,
+);
