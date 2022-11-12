@@ -27,5 +27,6 @@ const TextStyle kHintTextStyle = TextStyle(
 const TextStyle kTimerTextStyle = TextStyle(
   fontSize: 100.0,
   color: Colors.white,
+  fontFamily: 'Oswald',
   fontWeight: FontWeight.w500,
 );
