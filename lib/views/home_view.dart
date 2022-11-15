@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:po_focus/constants.dart';
 import 'package:po_focus/themes/default_theme.dart';
 
+import '../components/button_widget.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -82,34 +84,15 @@ class _HomeViewState extends State<HomeView> {
             '$time',
             style: kTimerTextStyle,
           ),
-          Container(
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: kSecondColor,
-                  blurRadius: 17,
-                )
-              ]
-            ),
-            child: ElevatedButton(
-              style: kStartButtonStyle,
-              onPressed: _startCountDown,
-              child: isCountDownStart == true
-                  ? const Icon(
-                      Icons.pause,
-                      size: 40,
-                      color: kTextColor,
-                    )
-                  : const Icon(
-                      Icons.play_arrow,
-                      size: 40,
-                      color: kTextColor,
-                    ),
-            ),
-          ),
+          buildButtons(),
         ],
       ),
+    );
+  }
+  
+  Widget buildButtons() {
+    return ButtonWidget(
+      onTap: _startCountDown,
     );
   }
 }
