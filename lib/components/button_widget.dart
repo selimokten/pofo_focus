@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class ButtonWidget extends StatelessWidget {
-  // final Icon icon;
+  final IconData icon;
   final VoidCallback onTap;
 
-  const ButtonWidget({required this.onTap});
+  const ButtonWidget({required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +22,11 @@ class ButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         style: kStartButtonStyle,
         onPressed: onTap,
-        child: true == true
-            ? const Icon(
-                Icons.pause,
+        child: Icon(
+                icon,
                 size: 40,
                 color: kTextColor,
               )
-            : const Icon(
-                Icons.play_arrow,
-                size: 40,
-                color: kTextColor,
-              ),
       ),
     );
   }

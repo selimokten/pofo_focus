@@ -14,22 +14,26 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   int time = 60;
   bool isCountDownStart = false;
+  Timer? timer;
 
-  void _startCountDown(){
+  void _startCountDown() {
     isCountDownStart = true;
-    Timer.periodic(const Duration(seconds: 1), (timer) {
+    timer = Timer.periodic(const Duration(milliseconds: 60), (timer) {
       setState(() {
-        if(time > 0){
+        if (time > 0) {
           time--;
         } else {
-          timer.cancel();
+          _stopTimer();
         }
       });
     });
-  } 
+  }
+
+  void _stopTimer() {
+    timer?.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,19 +84,31 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
           ),
-          Text(
-            '$time',
-            style: kTimerTextStyle,
-          ),
+          buildTimer(),
           buildButtons(),
         ],
       ),
     );
   }
-  
+
   Widget buildButtons() {
-    return ButtonWidget(
-      onTap: _startCountDown,
+    final isRunning = timer == null ? false : timer!.isActive;
+
+    return isRunning
+        ? ButtonWidget(
+            onTap: _stopTimer,
+            icon: Icons.pause,
+          )
+        : ButtonWidget(
+            onTap: _startCountDown,
+            icon: Icons.play_arrow,
+          );
+  }
+
+  Widget buildTimer() {
+    return Text(
+      '$time',
+      style: kTimerTextStyle,
     );
   }
 }
