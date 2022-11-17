@@ -18,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
   bool isCountDownStart = false;
   Timer? timer;
 
-  void _startCountDown() {
+  void _startTimer() {
     isCountDownStart = true;
     timer = Timer.periodic(const Duration(milliseconds: 60), (timer) {
       setState(() {
@@ -94,15 +94,9 @@ class _HomeViewState extends State<HomeView> {
   Widget buildButtons() {
     final isRunning = timer == null ? false : timer!.isActive;
 
-    return isRunning
-        ? ButtonWidget(
-            onTap: _stopTimer,
-            icon: Icons.pause,
-          )
-        : ButtonWidget(
-            onTap: _startCountDown,
-            icon: Icons.play_arrow,
-          );
+    return ButtonWidget(
+        icon: isRunning ? Icons.pause : Icons.play_arrow,
+        onTap: isRunning ? _stopTimer : _startTimer);
   }
 
   Widget buildTimer() {
