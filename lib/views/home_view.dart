@@ -96,7 +96,13 @@ class _HomeViewState extends State<HomeView> {
 
     return ButtonWidget(
         icon: isRunning ? Icons.pause : Icons.play_arrow,
-        onTap: isRunning ? _stopTimer : _startTimer);
+        onTap: (() {
+          if (isRunning) {
+            _stopTimer();
+          } else {
+            _startTimer();
+          }
+        }));
   }
 
   Widget buildTimer() {
