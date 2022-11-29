@@ -92,15 +92,21 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget buildButtons() {
+    //
     final isRunning = timer == null ? false : timer!.isActive;
+    //
 
     return ButtonWidget(
         icon: isRunning ? Icons.pause : Icons.play_arrow,
         onTap: (() {
           if (isRunning) {
             _stopTimer();
+            print('if stop timer');
+            print(timer!.isActive);
           } else {
             _startTimer();
+            print('else start timer');
+            print(isRunning);
           }
         }));
   }
